@@ -1,3 +1,12 @@
+/*
+One of the characteristics of object-oriented languages is the concept of inheritance.
+An example of its use in this project is given
+
+
+*/
+
+
+
 #include<iostream>
 #include<stdio.h>
 #include<cstdio>
@@ -123,7 +132,7 @@ int main()
 
 }
 
-@CemreDut
+/* @CemreDut*/
 
 
 
