@@ -1,0 +1,86 @@
+//strtype adinda bir string ve bu stringin uzunlugunu tutan basit bir string sinifi
+#include<iostream>
+#include<cstring>
+#include<cstdlib>
+#define SIZE 255
+using namespace std;
+
+class strtype
+{
+	char *p;
+	int len;
+public: 
+	strtype(); //constructor
+	~strtype(); //destructor
+	void set(char *ptr);
+	void show();
+};
+
+//string nesenesi icin hazirlik
+strtype::strtype()
+{
+	p=(char *) malloc(SIZE);
+	if(!p)
+	{
+		cout<<"Bellekte yer ayirma hatasi \n"<<endl;
+		exit(1);
+	}
+	*p='\0';
+	len=0;
+}
+//string nesnesi yok edilirken bellek serbest birakilir
+strtype::~strtype()
+{
+	cout<<"p, serbest birakiliyor \n";
+	free(p);	
+} 
+
+void strtype::set(char *ptr)
+{
+	if(strlen(p)>=SIZE)
+	{
+		cout<<"String fazla buyuk\n";
+		return;
+	}
+	strcpy(p,ptr);
+	len=strlen(p);
+}
+void strtype::show()
+{
+	cout<<p<<"- uzunlugu : "<<len;
+	cout<<"\n";
+}
+
+int main()
+{
+	strtype s1,s2;
+	s1.set("Bu bir deneme");
+	s2.set("C++ dersi");
+	s1.show();
+	s2.show();
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
