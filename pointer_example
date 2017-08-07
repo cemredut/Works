@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class Not{
+	int puan;
+public:
+	Not(int x);
+	int sonuc();
+};
+Not::Not(int x) //constructor
+{
+	puan=x;
+}
+int Not::sonuc()
+{
+	return puan;
+}
+int main()
+{
+	Not ob(100); 
+	Not *p; //pointer
+	p=&ob; //nesnenin adresini tutacak
+	cout<<"Exam's result: "<<ob.sonuc()<<"\n";
+	cout<<"Pointer value: "<<p->sonuc();
+	return 0;
+}
