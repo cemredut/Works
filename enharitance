@@ -1,0 +1,29 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class alan{
+	public:
+		double yukseklik;
+		double en;
+};
+class dikdortgen:public alan{
+	public: 
+	 dikdortgen(double yuk,double e);
+	 double alan();
+	 
+};
+dikdortgen::dikdortgen(double yuk,double e) //constructor
+{
+	yukseklik=yuk;
+	en=e;
+}
+double dikdortgen::alan()
+{
+	return yukseklik*en;
+}
+int main()
+{
+	dikdortgen a(20.0,4.0);
+	cout<<"Dikdortgenin alani: " << a.alan()<<endl;
+	return 0;
+}
